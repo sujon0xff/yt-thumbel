@@ -6,7 +6,9 @@ Welcome to the **YouTube Thumbnail Downloader**! 🚀 This project makes it supe
 
 ## 🌐 Official Website
 
-👉 Visit the live version of this project here: [YouTube Thumbnail Downloader](https://sujon0xff.github.io/yt-thumbel/)
+1. **Visit Website:**
+
+    - [![Visit Website](https://img.shields.io/badge/Visit-Website-blue?style=for-the-badge)](https://sujon0xff.github.io/yt-thumbel/)
 
 ---
 
@@ -47,8 +49,9 @@ Includes all necessary files to enable one-click thumbnail downloads. Place all 
 
 ## 📹 Watch the Tutorial
 
-For a step-by-step guide, check out this tutorial:  
-[How to Use the YouTube Thumbnail Downloader](#)
+1. **Need Help?**:
+
+   - [![Watch the Tutorial](https://img.shields.io/badge/Watch-Tutorial-red?style=for-the-badge&logo=youtube)](https://youtu.be/Ilr_q-KjUSg?si=XgxKXErXVTPmO-gI)
 
 ---
 
