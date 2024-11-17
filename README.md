@@ -1,4 +1,4 @@
-# YouTube Thumbnail Downloader
+# YouTube Thumbnail Downloader 🎥
 
 Welcome to the **YouTube Thumbnail Downloader**! 🚀 This project makes it super easy to download thumbnails from YouTube videos in different resolutions. Whether you prefer manual downloads or an automated PHP-powered option, we’ve got you covered!
 
