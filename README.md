@@ -51,7 +51,7 @@ Includes all necessary files to enable one-click thumbnail downloads. Place all 
 
 1. **Need Help?**:
 
-   - [![Watch the Tutorial](https://img.shields.io/badge/Watch-Tutorial-red?style=for-the-badge&logo=youtube)](https://youtu.be/Ilr_q-KjUSg?si=XgxKXErXVTPmO-gI)
+   - [![Watch the Tutorial](https://img.shields.io/badge/Watch-Tutorial-red?style=for-the-badge&logo=youtube)](https://www.facebook.com/share/v/1AtcLSTjgx/)
 
 ---
 
