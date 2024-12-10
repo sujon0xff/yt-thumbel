@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>YouTube Thumbnail Downloader Pro</title>
+ <meta name="description" content="YouTube Thumbnail Downloader Pro - Download high-quality thumbnails from any YouTube video in seconds. Supports HD, HQ, SD, and MQ quality.">
+<meta name="keywords" content="YouTube Thumbnail Downloader, HD Thumbnails, YouTube Thumbnail Generator, Download YouTube Images, Thumbnail Download Tool">
+<meta name="author" content="Sujon Islam">
+<link rel="shortcut icon" href="https://i.ibb.co.com/4mp8rSW/red-circle-bordered-youtube-logo-with-long-shadow-on-transparent-background-free-png.png" />
+<meta property="og:title" content="YouTube Thumbnail Downloader Pro">
+<meta property="og:description" content="Download high-quality thumbnails from YouTube videos easily.">
+<meta property="og:image" content="https://i.ibb.co.com/87RdtFB/20241117-114511.jpg">
+<meta property="og:url" content="https://your-website-link.com">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+   
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>YouTube Thumbnail Downloader Pro</h1>
+            <p class="note">Download high-quality thumbnails from any YouTube video in seconds‼️ <a href="https://sujon0xff.github.io/" target="_blank" style="color: #FF0000; text-decoration: none;">How to Use?</a>
+</p>
+        </div>
+        
+        <div class="search-container">
+            <div class="input-group">
+                <div class="input-wrapper">
+                    <i class="fa-brands fa-youtube"></i>
+                    <input type="text" id="videoUrl" placeholder="Paste YouTube video URL here..." autofocus>
+                </div>
+                <button onclick="getThumbnails()">
+                    <i class="fas fa-search"></i>
+                    Get Thumbnails
+                </button>
+            </div>
+            <div id="error" class="error">
+                <i class="fas fa-exclamation-circle"></i>
+                <span id="errorText"></span>
+            </div>
+        </div>
+
+        <div id="loading" class="loading">
+            <div class="loading-spinner"></div>
+            <p>Thumbnails Coming...</p>
+        </div>
+
+        <div id="result">
+            <div class="thumbnail-grid" id="thumbnailOptions"></div>
+        </div>
+	       </div>
+    <div class="footer">
+        Developed by <a id="developer-link" href="https://sujon0xff.vercel.app/" target="_blank">Sujon Islam</a> | Join our <a id="telegram-link" href="https://t.me/Freedom369_4u" target="_blank">Telegram</a>
+    </div>
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "YouTube Thumbnail Downloader Pro",
+    "url": "https://your-website-link.com",
+    "description": "Download HD, HQ, and standard YouTube thumbnails in seconds."
+}
+</script>
+
+    <script>
+        function extractVideoId(url) {
+            const regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/;
+            const match = url.match(regExp);
+            return (match && match[7].length == 11) ? match[7] : false;
+        }
+
+        function showError(message) {
+            const errorDiv = document.getElementById('error');
+            const errorText = document.getElementById('errorText');
+            errorDiv.style.display = 'block';
+            errorText.textContent = message;
+            setTimeout(() => {
+                errorDiv.style.display = 'none';
+            }, 5000);
+        }
+
+        function getThumbnails() {
+            const url = document.getElementById('videoUrl').value;
+            const videoId = extractVideoId(url);
+            const resultDiv = document.getElementById('result');
+            const loadingDiv = document.getElementById('loading');
+            const thumbnailOptions = document.getElementById('thumbnailOptions');
+
+            if (!videoId) {
+                showError('Please enter a valid YouTube URL');
+                resultDiv.style.display = 'none';
+                return;
+            }
+
+            loadingDiv.style.display = 'block';
+            resultDiv.style.display = 'none';
+
+            setTimeout(() => {
+                const qualities = [
+                    { name: 'Maximum Resolution', quality: 'maxresdefault', label: 'HD' },
+                    { name: 'High Quality', quality: 'hqdefault', label: 'HQ' },
+                    { name: 'Medium Quality', quality: 'mqdefault', label: 'MQ' },
+                    { name: 'Standard Quality', quality: 'sddefault', label: 'SD' }
+                ];
+
+                thumbnailOptions.innerHTML = '';
+                qualities.forEach(quality => {
+                    const thumbnailUrl = `https://img.youtube.com/vi/${videoId}/${quality.quality}.jpg`;
+                    const div = document.createElement('div');
+                    div.className = 'thumbnail-card';
+                    div.innerHTML = `
+                        <div class="thumbnail-image">
+                            <img src="${thumbnailUrl}" alt="${quality.name}" loading="lazy">
+                        </div>
+                        <div class="thumbnail-info">
+                            <div class="quality-badge">
+                                <i class="fas fa-photo-video"></i> ${quality.label}
+                            </div>
+                            <h3>${quality.name}</h3>
+                            <a href="${thumbnailUrl}" 
+                               class="direct-download-link" 
+                               target="_blank" 
+                               rel="noopener noreferrer">
+                                <i class="fas fa-download"></i>
+                                Download
+                            </a>
+                        </div>
+                    `;
+                    thumbnailOptions.appendChild(div);
+                });
+
+                loadingDiv.style.display = 'none';
+                resultDiv.style.display = 'block';
+            }, 1000);
+        }
+
+        document.getElementById('videoUrl').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                getThumbnails();
+            }
+        });
+    </script>
+</body>
+</html>
