@@ -8,7 +8,7 @@ Welcome to the **YouTube Thumbnail Downloader**! 🚀 This project makes it supe
 
 1. **Visit Website:**
 
-    - [![Visit Website](https://img.shields.io/badge/Visit-Website-blue?style=for-the-badge)](https://sujon0xff.github.io/yt-thumbel/)
+    - [![Visit Website](https://img.shields.io/badge/Visit-Website-blue?style=for-the-badge)](https://freedom369x.github.io/yt-thumbel/)
 
 ---
 
